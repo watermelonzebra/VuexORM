@@ -45,9 +45,6 @@ const posts = computed(() =>
     PostModel.query().with(["author", "comments"]).get()
 );
 
-const authors = computed(() => AuthorModel.all());
-console.log(posts.value);
-
 const postTitleInput = ref<string>();
 const postBodyInput = ref<string>();
 function addPost() {
@@ -64,7 +61,6 @@ function addPost() {
 </script>
 
 <template>
-    {{ authors }}
     <h1>posts:</h1>
     <ul class="posts">
         <Post
